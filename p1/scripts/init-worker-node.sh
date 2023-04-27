@@ -1,5 +1,9 @@
 echo "Start worker node Script"
 
+cd /etc/yum.repos.d/
+sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+
 echo "retrieved token: $(cat /home/vagrant/token)"
 token="$(cat /home/vagrant/token)"
 
