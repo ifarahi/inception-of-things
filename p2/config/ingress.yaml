@@ -4,6 +4,15 @@ metadata:
   name: ingress-service
 spec:
   rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: app-one
+                port:
+                  number: 80
     - host: "app1.com"
       http:
         paths:

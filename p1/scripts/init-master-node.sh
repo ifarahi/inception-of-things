@@ -11,10 +11,8 @@ cat /var/lib/rancher/k3s/server/token
 
 sudo cp /var/lib/rancher/k3s/server/token /home/vagrant/token
 
-ls /home/vagrant/
-
 sudo chmod 644 /home/vagrant/token
 
-echo "alias k=kubectl" >> $HOME/.bashrc
+echo "alias k=kubectl" >> /home/vagrant/.bashrc
 
 echo "END master node Script"
