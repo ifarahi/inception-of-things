@@ -37,8 +37,16 @@ kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 echo "Installing argocd - END"
-
 # install argocd - END
+
+# deploy gitlab - START
+echo "deploy gitlab - START"
+
+kubectl create namespace gitlab
+kubectl apply -n gitlab -f ./config/gitlab-deployment.yaml
+
+echo "deploy gitlab - END"
+# install gitlab - END
 
 # wait for argocd services to be up
 echo "Starting argocd..."
